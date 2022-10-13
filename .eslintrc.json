@@ -17,5 +17,17 @@
     "plugins": [
         "react"
     ],
-    "rules": {}
+    "rules": {
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        // This lint doesn't seem to be working...?
+        "jsx-a11y/label-has-associated-control": "off"
+    }
 }
