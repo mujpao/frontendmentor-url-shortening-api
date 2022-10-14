@@ -19,9 +19,9 @@ class Shortener extends React.Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault();
     const { urlToShorten } = this.state;
     console.log(urlToShorten);
-    e.preventDefault();
   }
 
   render() {
@@ -31,7 +31,7 @@ class Shortener extends React.Component {
           <div className="form-item">
             <label htmlFor="long-url">Shorten a link here...</label>
             <input
-              type="text"
+              type="url"
               name="long-url"
               id="long-url"
               onChange={this.handleChange}
@@ -39,9 +39,29 @@ class Shortener extends React.Component {
           </div>
           <button type="submit">Shorten It!</button>
         </form>
+        <ShortenedLinks />
       </section>
     );
   }
+}
+
+function ShortenedLinks() {
+  return (
+    <div className="shortened-links">
+      <div className="shortened-link">
+        <p className="original">https://www.foo.com</p>
+        <hr />
+        <p className="shortened">https://www.google.com</p>
+        <button type="button">Copy</button>
+      </div>
+      <div className="shortened-link">
+        <p className="original">https://www.foo2.com</p>
+        <hr />
+        <p className="shortened">https://www.google.com</p>
+        <button type="button">Copy</button>
+      </div>
+    </div>
+  );
 }
 
 export default Shortener;

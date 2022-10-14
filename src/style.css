@@ -113,6 +113,8 @@ button.get-started {
     top: 12px;
     -webkit-user-select: none;
     user-select: none;
+    /* TODO make it visible again */
+    visibility: hidden;
 }
 
 .form-item input,
@@ -125,6 +127,28 @@ button.get-started {
 
 .form-item input {
     padding-left: 20px;
+}
+
+.shortened-links {
+    margin: 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.shortened-link {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.shortened-link button {
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 8px;
 }
 
 .info {
