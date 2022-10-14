@@ -1,5 +1,7 @@
 import React from "react";
 import "./style.css";
+import logo from "./images/logo.svg";
+import introPhoto from "./images/illustration-working.svg";
 
 function App() {
   return (
@@ -7,10 +9,12 @@ function App() {
       <Intro />
       <Shortener />
       <Info />
-      <div className="callToAction">
+      <section className="call-to-action">
         <h2>Boost your links today</h2>
-        <button type="button">Get Started</button>
-      </div>
+        <button className="get-started" type="button">
+          Get Started
+        </button>
+      </section>
       <Footer />
     </div>
   );
@@ -18,10 +22,15 @@ function App() {
 
 function Intro() {
   return (
-    <div className="intro">
+    <section className="intro">
       <header>
-        <h1>Shortly</h1>
-        <nav>
+        <img className="intro-logo" src={logo} alt="shortly-logo" />
+        <div className="hamburger-menu">
+          <div />
+          <div />
+          <div />
+        </div>
+        {/* <nav>
           <ul>
             <li>Features</li>
             <li>Pricing</li>
@@ -31,91 +40,106 @@ function Intro() {
             <li>Login</li>
             <li>Sign Up</li>
           </ul>
-        </nav>
+        </nav> */}
       </header>
-      <div>
+      <div className="image-container">
+        <img className="intro-image" src={introPhoto} alt="person working" />
+      </div>
+      <div className="intro-text">
         <h1>More than just shorter links</h1>
         <p>
           Build your brand’s recognition and get detailed insights on how your
           links are performing.
         </p>
-        <button type="button">Get Started</button>
+        <button className="get-started" type="button">
+          Get Started
+        </button>
       </div>
-    </div>
+    </section>
   );
 }
 
 function Shortener() {
   return (
-    <div className="shortener">
-      <div className="form-item">
-        <label htmlFor="long-url">Shorten a link here...</label>
-        <input type="text" name="long-url" id="long-url" />
+    <section className="shortener-container">
+      <div className="shortener">
+        <div className="form-item">
+          <label htmlFor="long-url">Shorten a link here...</label>
+          <input type="text" name="long-url" id="long-url" />
+        </div>
+        <button type="button">Shorten It!</button>
       </div>
-      <button type="button">Shorten It!</button>
-    </div>
+    </section>
   );
 }
 
 function Info() {
   return (
-    <div>
-      <h2>Advanced Statistics</h2>
-      <p>
-        Track how your links are performing across the web with our advanced
-        statistics dashboard.
-      </p>
-
-      <div className="info-item">
-        <h3>Brand Recognition</h3>
+    <section className="info">
+      <div className="overview">
+        <h2>Advanced Statistics</h2>
         <p>
-          Boost your brand recognition with each click. Generic links don’t mean
-          a thing. Branded links help instil confidence in your content.
+          Track how your links are performing across the web with our advanced
+          statistics dashboard.
         </p>
       </div>
 
-      <div className="info-item">
-        <h3>Detailed Records</h3>
-        <p>
-          Gain insights into who is clicking your links. Knowing when and where
-          people engage with your content helps inform better decisions.
-        </p>
+      <div className="info-items">
+        <div className="info-item">
+          <h3>Brand Recognition</h3>
+          <p>
+            Boost your brand recognition with each click. Generic links don’t
+            mean a thing. Branded links help instil confidence in your content.
+          </p>
+        </div>
+        <div className="info-item">
+          <h3>Detailed Records</h3>
+          <p>
+            Gain insights into who is clicking your links. Knowing when and
+            where people engage with your content helps inform better decisions.
+          </p>
+        </div>
+        <div className="info-item">
+          <h3>Fully Customizable</h3>
+          <p>
+            Improve brand awareness and content discoverability through
+            customizable links, supercharging audience engagement.
+          </p>
+        </div>
       </div>
-
-      <div className="info-item">
-        <h3>Fully Customizable</h3>
-        <p>
-          Improve brand awareness and content discoverability through
-          customizable links, supercharging audience engagement.
-        </p>
-      </div>
-    </div>
+    </section>
   );
 }
 
 function Footer() {
   return (
     <footer>
-      <h2>Shortly</h2>
-      <h3>Features</h3>
-      <ul>
-        <li>Link Shortening</li>
-        <li>Branded Links</li>
-        <li>Analytics</li>
-      </ul>
-      <h3>Resources</h3>
-      <ul>
-        <li>Blog</li>
-        <li>Developers</li>
-        <li>Support</li>
-      </ul>
-      <h3>Company</h3>
-      <ul>
-        <li>About</li>
-        <li>Our Team</li>
-        <li>Careers</li>
-        <li>Contact</li>
-      </ul>
+      <img src={logo} alt="shortly-logo" />
+      <div className="footer-item">
+        <h3>Features</h3>
+        <ul>
+          <li>Link Shortening</li>
+          <li>Branded Links</li>
+          <li>Analytics</li>
+        </ul>
+      </div>
+      <div className="footer-item">
+        <h3>Resources</h3>
+        <ul>
+          <li>Blog</li>
+          <li>Developers</li>
+          <li>Support</li>
+        </ul>
+      </div>
+      <div className="footer-item">
+        <h3>Company</h3>
+        <ul>
+          <li>About</li>
+          <li>Our Team</li>
+          <li>Careers</li>
+          <li>Contact</li>
+        </ul>
+      </div>
 
       {/* TODO add attribution section */}
     </footer>
