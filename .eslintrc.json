@@ -29,6 +29,8 @@
         ],
         // This lint doesn't seem to be working...?
         "jsx-a11y/label-has-associated-control": "off",
-        "class-methods-use-this": "off"
+        "class-methods-use-this": "off",
+        "react/no-array-index-key": "off",
+        "react/prop-types": "off"
     }
 }
