@@ -109,6 +109,10 @@ button.get-started {
 
 .form-item label {
     position: absolute;
+    left: 20px;
+    top: 12px;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .form-item input,
@@ -116,7 +120,11 @@ button.get-started {
     width: 100%;
     box-sizing: border-box;
     border-radius: 5px;
-    padding: 8px;
+    padding: 10px;
+}
+
+.form-item input {
+    padding-left: 20px;
 }
 
 .info {

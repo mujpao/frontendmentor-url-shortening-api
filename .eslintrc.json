@@ -28,6 +28,7 @@
             }
         ],
         // This lint doesn't seem to be working...?
-        "jsx-a11y/label-has-associated-control": "off"
+        "jsx-a11y/label-has-associated-control": "off",
+        "class-methods-use-this": "off"
     }
 }

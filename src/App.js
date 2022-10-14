@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 import logo from "./images/logo.svg";
 import introPhoto from "./images/illustration-working.svg";
+import Shortener from "./components/Shortener";
 
 function App() {
   return (
@@ -54,20 +55,6 @@ function Intro() {
         <button className="get-started" type="button">
           Get Started
         </button>
-      </div>
-    </section>
-  );
-}
-
-function Shortener() {
-  return (
-    <section className="shortener-container">
-      <div className="shortener">
-        <div className="form-item">
-          <label htmlFor="long-url">Shorten a link here...</label>
-          <input type="text" name="long-url" id="long-url" />
-        </div>
-        <button type="button">Shorten It!</button>
       </div>
     </section>
   );
