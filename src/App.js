@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
-import logo from "./images/logo.svg";
+import darkLogo from "./images/logo.svg";
+import lightLogo from "./images/logo-light.svg";
 import introPhoto from "./images/illustration-working.svg";
 import Shortener from "./components/Shortener";
 
@@ -25,7 +26,7 @@ function Intro() {
   return (
     <section className="intro">
       <header>
-        <img className="intro-logo" src={logo} alt="shortly-logo" />
+        <img className="intro-logo" src={darkLogo} alt="shortly-logo" />
         <div className="hamburger-menu">
           <div />
           <div />
@@ -101,7 +102,7 @@ function Info() {
 function Footer() {
   return (
     <footer>
-      <img src={logo} alt="shortly-logo" />
+      <img className="footer-logo" src={lightLogo} alt="shortly-logo" />
       <div className="footer-item">
         <h3>Features</h3>
         <ul>

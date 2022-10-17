@@ -1,10 +1,21 @@
+:root {
+    --button-background-color: hsl(180, 66%, 49%);
+    --very-light-background-color: white;
+    --light-background-color: hsl(0, 0%, 94%);
+    --dark-background-color: hsl(257, 27%, 26%);
+    --very-dark-background-color: hsl(255, 11%, 22%);
+    --error-color: hsl(0, 87%, 67%);
+    --light-text-color: white;
+    --medium-text-color: hsl(257, 7%, 63%);
+    --dark-text-color: hsl(260, 8%, 14%);
+}
+
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: aliceblue;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -14,6 +25,19 @@ select,
 textarea {
     font-family: inherit;
     font-size: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--dark-text-color);
+}
+
+p {
+    color: var(--medium-text-color);
 }
 
 header {
@@ -33,7 +57,11 @@ header nav ul {
 }
 
 button {
+    box-sizing: border-box;
+    border: none;
     font-weight: bold;
+    color: var(--light-text-color);
+    background-color: var(--button-background-color);
 }
 
 button.get-started {
@@ -53,7 +81,7 @@ button.get-started {
 .hamburger-menu>* {
     height: 4px;
     width: 30px;
-    background-color: black;
+    background-color: var(--medium-text-color);
 }
 
 /* Intro Section */
@@ -94,12 +122,12 @@ button.get-started {
 /* Shortener Section */
 
 .shortener-container {
-    border: 1px solid black;
+    background-color: var(--light-background-color);
     padding: 20px;
 }
 
 .shortener {
-    background-color: rgb(168, 168, 168);
+    background-color: var(--dark-background-color);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -122,7 +150,7 @@ button.get-started {
 }
 
 .form-item label.invalid-input {
-    color: red;
+    color: var(--error-color);
 }
 
 .form-item label.visually-hidden {
@@ -148,11 +176,11 @@ button.get-started {
 }
 
 .form-item input.touched:invalid {
-    border-color: red;
+    border-color: var(--error-color);
 }
 
 .error {
-    color: red;
+    color: var(--error-color);
 }
 
 .shortened-links {
@@ -163,12 +191,29 @@ button.get-started {
 }
 
 .shortened-link {
-    padding: 20px;
+    padding: 15px 0;
     background-color: white;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    row-gap: 10px;
+}
+
+.shortened-link>* {
+    grid-column: 2/3;
+}
+
+.shortened-link .original {
+    color: var(--dark-text-color);
+}
+
+.shortened-link .shortened {
+    color: var(--button-background-color);
+}
+
+.shortened-link>hr {
+    border-top: 1px solid var(--light-background-color);
+    grid-column: 1/-1;
 }
 
 .shortened-link button {
@@ -182,6 +227,7 @@ button.get-started {
 .info {
     padding: 50px 20px;
     text-align: center;
+    background-color: var(--light-background-color);
 }
 
 .info .overview {
@@ -200,7 +246,8 @@ button.get-started {
 }
 
 .info-item {
-    background-color: white;
+    background-color: var(--very-light-background-color);
+    border-radius: 5px;
     padding: 70px 25px 40px;
 }
 
@@ -208,26 +255,31 @@ button.get-started {
 
 .call-to-action {
     text-align: center;
-    background-color: blueviolet;
-    color: white;
+    background-color: var(--dark-background-color);
     padding: 90px 0;
 }
 
 .call-to-action h2 {
     font-size: 1.7rem;
     margin-bottom: 15px;
+    color: var(--light-text-color);
 }
 
 /* Footer Section */
 
 footer {
-    background-color: black;
-    color: white;
+    background-color: var(--very-dark-background-color);
     text-align: center;
+    align-items: center;
     padding: 50px 20px;
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+
+.footer-logo {
+    height: 35px;
+    margin-bottom: 15px;
 }
 
 footer ul {
@@ -236,6 +288,7 @@ footer ul {
 
 .footer-item h3 {
     margin-bottom: 20px;
+    color: var(--light-text-color);
 }
 
 .footer-item ul {
@@ -243,4 +296,5 @@ footer ul {
     flex-direction: column;
     gap: 10px;
     font-size: 0.9rem;
+    color: var(--medium-text-color);
 }
