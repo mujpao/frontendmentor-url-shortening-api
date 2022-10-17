@@ -44,10 +44,23 @@ class ShortenerForm extends React.Component {
   render() {
     const { urlToShorten, valid, touched } = this.state;
 
+    const isEmpty = urlToShorten === "";
+
+    let labelClasses = "";
+    if (!isEmpty) {
+      labelClasses += "visually-hidden";
+    }
+
+    if (touched && !valid) {
+      labelClasses += " invalid-input";
+    }
+
     return (
       <form className="shortener" onSubmit={this.handleSubmit} noValidate>
         <div className="form-item">
-          <label htmlFor="long-url">Shorten a link here...</label>
+          <label htmlFor="long-url" className={labelClasses}>
+            Shorten a link here...
+          </label>
           <input
             ref={this.inputRef}
             type="url"

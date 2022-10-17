@@ -119,8 +119,20 @@ button.get-started {
     top: 12px;
     -webkit-user-select: none;
     user-select: none;
-    /* TODO make it visible again */
-    visibility: hidden;
+}
+
+.form-item label.invalid-input {
+    color: red;
+}
+
+.form-item label.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }
 
 .form-item input,
