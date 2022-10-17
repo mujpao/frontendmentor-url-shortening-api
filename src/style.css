@@ -42,6 +42,8 @@ button.get-started {
     border-radius: 40px;
 }
 
+/* Header Section */
+
 .hamburger-menu {
     display: flex;
     flex-direction: column;
@@ -53,6 +55,8 @@ button.get-started {
     width: 30px;
     background-color: black;
 }
+
+/* Intro Section */
 
 .intro {
     padding-bottom: 30px;
@@ -86,6 +90,8 @@ button.get-started {
 .intro-text p {
     font-size: 1.1rem;
 }
+
+/* Shortener Section */
 
 .shortener-container {
     border: 1px solid black;
@@ -129,6 +135,14 @@ button.get-started {
     padding-left: 20px;
 }
 
+.form-item input.touched:invalid {
+    border-color: red;
+}
+
+.error {
+    color: red;
+}
+
 .shortened-links {
     margin: 20px 0 0;
     display: flex;
@@ -150,6 +164,8 @@ button.get-started {
     border-radius: 5px;
     padding: 8px;
 }
+
+/* Info Section */
 
 .info {
     padding: 50px 20px;
@@ -176,6 +192,8 @@ button.get-started {
     padding: 70px 25px 40px;
 }
 
+/* Call to Action Section */
+
 .call-to-action {
     text-align: center;
     background-color: blueviolet;
@@ -187,6 +205,8 @@ button.get-started {
     font-size: 1.7rem;
     margin-bottom: 15px;
 }
+
+/* Footer Section */
 
 footer {
     background-color: black;

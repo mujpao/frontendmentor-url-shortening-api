@@ -1,12 +1,12 @@
 import React from "react";
 import shortenURL from "../shortenURL";
+import ShortenerForm from "./ShortenerForm";
 
 class Shortener extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      urlToShorten: "",
       urls: [
         {
           originalLink: "https://www.foo.com",
@@ -19,23 +19,11 @@ class Shortener extends React.Component {
       ],
     };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleURLSubmitted = this.handleURLSubmitted.bind(this);
   }
 
-  handleChange(e) {
-    this.setState({
-      urlToShorten: e.target.value,
-    });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const { urlToShorten } = this.state;
-    console.log(urlToShorten);
-
+  handleURLSubmitted(urlToShorten) {
     shortenURL(urlToShorten).then((shortenedURL) => {
-      console.log(shortenedURL);
       this.setState((prevState) => ({
         urls: prevState.urls.concat({
           originalLink: urlToShorten,
@@ -50,18 +38,7 @@ class Shortener extends React.Component {
 
     return (
       <section className="shortener-container">
-        <form className="shortener" onSubmit={this.handleSubmit}>
-          <div className="form-item">
-            <label htmlFor="long-url">Shorten a link here...</label>
-            <input
-              type="url"
-              name="long-url"
-              id="long-url"
-              onChange={this.handleChange}
-            />
-          </div>
-          <button type="submit">Shorten It!</button>
-        </form>
+        <ShortenerForm handleURLSubmitted={this.handleURLSubmitted} />
         <ShortenedLinks urls={urls} />
       </section>
     );
