@@ -141,6 +141,10 @@ button.get-started {
 
 .shortener {
     background-color: var(--dark-background-color);
+    background-image: url("./images/bg-shorten-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: bottom 30px left 70px;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -342,9 +346,12 @@ button.get-started {
 /* Call to Action Section */
 
 .call-to-action {
-    text-align: center;
+    background-color: var(--dark-background-color);
+    background-image: url("./images/bg-boost-mobile.svg");
+    background-repeat: no-repeat;
     background-color: var(--dark-background-color);
     padding: 90px 0;
+    text-align: center;
 }
 
 .call-to-action h2 {
@@ -385,4 +392,21 @@ footer ul {
     gap: 10px;
     font-size: 0.9rem;
     color: var(--medium-text-color);
+}
+
+.social-icons {
+    margin: 20px 0;
+    display: flex;
+    gap: 20px;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: var(--medium-text-color);
+}
+
+.attribution a {
+    color: var(--light-text-color);
+    text-decoration: none;
 }

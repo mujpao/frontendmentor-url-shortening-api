@@ -6,6 +6,10 @@ import introPhoto from "./images/illustration-working.svg";
 import brandRecognitionIcon from "./images/icon-brand-recognition.svg";
 import detailedRecordsIcon from "./images/icon-detailed-records.svg";
 import fullyCustomizableIcon from "./images/icon-fully-customizable.svg";
+import facebookIcon from "./images/icon-facebook.svg";
+import twitterIcon from "./images/icon-twitter.svg";
+import pinterestIcon from "./images/icon-pinterest.svg";
+import instagramIcon from "./images/icon-instagram.svg";
 import Shortener from "./components/Shortener";
 
 function App() {
@@ -141,7 +145,32 @@ function Footer() {
         </ul>
       </div>
 
-      {/* TODO add attribution section */}
+      <div className="social-icons">
+        <div className="social-icon">
+          <img src={facebookIcon} alt="facebook" />
+        </div>
+        <div className="social-icon">
+          <img src={twitterIcon} alt="twitter" />
+        </div>
+        <div className="social-icon">
+          <img src={pinterestIcon} alt="pinterest" />
+        </div>
+        <div className="social-icon">
+          <img src={instagramIcon} alt="instagram" />
+        </div>
+      </div>
+
+      <div className="attribution">
+        Challenge by{" "}
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Frontend Mentor
+        </a>
+        . Coded by <a href="https://github.com/mujpao">mujpao</a>.
+      </div>
     </footer>
   );
 }
