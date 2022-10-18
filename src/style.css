@@ -140,11 +140,9 @@ button.get-started {
     background-color: var(--dark-background-color);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     border-radius: 10px;
     padding: 20px;
-    text-align: center;
-    align-items: center;
     grid-row: 1/-1;
     grid-column: 2/3;
     z-index: 1;
@@ -172,6 +170,7 @@ button.get-started {
     top: 12px;
     -webkit-user-select: none;
     user-select: none;
+    opacity: 0.55;
 }
 
 .form-item label.invalid-input {
@@ -198,14 +197,30 @@ button.get-started {
 
 .form-item input {
     padding-left: 20px;
+    color: var(--dark-text-color);
+    background-color: var(--very-light-background-color);
+}
+
+.form-item input:focus {
+    outline-color: var(--light-background-color);
+    outline-width: 1px;
+    outline-style: solid;
 }
 
 .form-item input.touched:invalid {
     border-color: var(--error-color);
+    outline-color: var(--error-color);
+    color: var(--error-color);
 }
 
 .error {
-    color: var(--error-color);
+    font-style: italic;
+    font-size: 0.8rem;
+    color: hsl(0, 66%, 64%);
+}
+
+.shortener button {
+    font-size: 1.1rem;
 }
 
 .shortened-links {

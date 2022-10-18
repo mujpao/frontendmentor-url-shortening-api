@@ -72,7 +72,7 @@ class ShortenerForm extends React.Component {
             required
           />
           {touched && !valid && (
-            <span className="error">Please enter something valid...</span>
+            <span className="error">Please add a link</span>
           )}
         </div>
         <button type="submit">Shorten It!</button>
