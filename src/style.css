@@ -8,6 +8,8 @@
     --light-text-color: white;
     --medium-text-color: hsl(257, 7%, 63%);
     --dark-text-color: hsl(260, 8%, 14%);
+    --ribbon-height: 95px;
+    --ribbon-width: 8px;
 }
 
 * {
@@ -288,7 +290,7 @@ button.get-started {
 
 .info-items {
     display: grid;
-    gap: 90px;
+    gap: var(--ribbon-height);
 }
 
 .info-item {
@@ -299,6 +301,20 @@ button.get-started {
     flex-direction: column;
     align-items: center;
     position: relative;
+}
+
+.info-item:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: var(--ribbon-width);
+    height: var(--ribbon-height);
+    background-color: var(--button-background-color);
+    position: absolute;
+    bottom: calc(-1.0 * var(--ribbon-height));
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .info-item .icon {
