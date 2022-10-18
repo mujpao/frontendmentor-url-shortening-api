@@ -3,6 +3,9 @@ import "./style.css";
 import darkLogo from "./images/logo.svg";
 import lightLogo from "./images/logo-light.svg";
 import introPhoto from "./images/illustration-working.svg";
+import brandRecognitionIcon from "./images/icon-brand-recognition.svg";
+import detailedRecordsIcon from "./images/icon-detailed-records.svg";
+import fullyCustomizableIcon from "./images/icon-fully-customizable.svg";
 import Shortener from "./components/Shortener";
 
 function App() {
@@ -74,6 +77,9 @@ function Info() {
 
       <div className="info-items">
         <div className="info-item">
+          <div className="icon">
+            <img src={brandRecognitionIcon} alt="chart" />
+          </div>
           <h3>Brand Recognition</h3>
           <p>
             Boost your brand recognition with each click. Generic links don’t
@@ -81,6 +87,9 @@ function Info() {
           </p>
         </div>
         <div className="info-item">
+          <div className="icon">
+            <img src={detailedRecordsIcon} alt="compass" />
+          </div>
           <h3>Detailed Records</h3>
           <p>
             Gain insights into who is clicking your links. Knowing when and
@@ -88,6 +97,9 @@ function Info() {
           </p>
         </div>
         <div className="info-item">
+          <div className="icon">
+            <img src={fullyCustomizableIcon} alt="paintbrushes" />
+          </div>
           <h3>Fully Customizable</h3>
           <p>
             Improve brand awareness and content discoverability through

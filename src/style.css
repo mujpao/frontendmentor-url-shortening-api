@@ -128,6 +128,7 @@ button.get-started {
 
 .shortener-container {
     background-color: var(--light-background-color);
+    padding-bottom: 100px;
 }
 
 .shortener-form-container {
@@ -266,14 +267,18 @@ button.get-started {
 /* Info Section */
 
 .info {
-    padding: 50px 20px;
+    padding: 0 20px 80px;
     text-align: center;
     background-color: var(--light-background-color);
 }
 
+.info p {
+    line-height: 1.7;
+}
+
 .info .overview {
     padding: 0 10px;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 }
 
 .info .overview h2 {
@@ -283,13 +288,39 @@ button.get-started {
 
 .info-items {
     display: grid;
-    gap: 70px;
+    gap: 90px;
 }
 
 .info-item {
     background-color: var(--very-light-background-color);
     border-radius: 5px;
-    padding: 70px 25px 40px;
+    padding: 80px 25px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.info-item .icon {
+    box-sizing: border-box;
+    background-color: var(--dark-background-color);
+    border-radius: 50%;
+    width: 90px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -45px;
+}
+
+.info-item .icon img {
+    width: 40px;
+}
+
+.info-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
 }
 
 /* Call to Action Section */
