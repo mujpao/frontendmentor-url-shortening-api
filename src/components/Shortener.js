@@ -38,7 +38,11 @@ class Shortener extends React.Component {
 
     return (
       <section className="shortener-container">
-        <ShortenerForm handleURLSubmitted={this.handleURLSubmitted} />
+        <div className="shortener-form-container">
+          <ShortenerForm handleURLSubmitted={this.handleURLSubmitted} />
+          <div className="top" />
+          <div className="bottom" />
+        </div>
         <ShortenedLinks urls={urls} />
       </section>
     );

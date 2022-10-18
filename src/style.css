@@ -128,7 +128,12 @@ button.get-started {
 
 .shortener-container {
     background-color: var(--light-background-color);
-    padding: 20px;
+}
+
+.shortener-form-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 20px 1fr 20px;
 }
 
 .shortener {
@@ -140,6 +145,21 @@ button.get-started {
     padding: 20px;
     text-align: center;
     align-items: center;
+    grid-row: 1/-1;
+    grid-column: 2/3;
+    z-index: 1;
+}
+
+.shortener-form-container .top {
+    background-color: var(--very-light-background-color);
+    grid-column: 1/-1;
+    grid-row: 1/2
+}
+
+.shortener-form-container .bottom {
+    background-color: var(--light-background-color);
+    grid-column: 1/-1;
+    grid-row: 2/3
 }
 
 .form-item {
@@ -190,6 +210,7 @@ button.get-started {
 
 .shortened-links {
     margin: 20px 0 0;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
