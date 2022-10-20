@@ -71,7 +71,9 @@ function ShortenedLink(props) {
       <p className="original">{originalLink}</p>
       <hr />
       <p className="shortened">{shortenedLink}</p>
-      <button type="button">Copy</button>
+      <button type="button" className="btn">
+        Copy
+      </button>
     </div>
   );
 }

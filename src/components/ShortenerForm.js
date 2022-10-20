@@ -75,7 +75,9 @@ class ShortenerForm extends React.Component {
             <span className="error">Please add a link</span>
           )}
         </div>
-        <button type="submit">Shorten It!</button>
+        <button type="submit" className="btn">
+          Shorten It!
+        </button>
       </form>
     );
   }

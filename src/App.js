@@ -13,7 +13,7 @@ function App() {
       <Info />
       <section className="call-to-action">
         <h2>Boost your links today</h2>
-        <button className="get-started" type="button">
+        <button className="btn get-started" type="button">
           Get Started
         </button>
       </section>
