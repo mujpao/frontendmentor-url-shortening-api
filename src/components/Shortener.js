@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import shortenURL from "../shortenURL";
 import ShortenerForm from "./ShortenerForm";
 
@@ -66,13 +66,28 @@ function ShortenedLinks(props) {
 function ShortenedLink(props) {
   const { originalLink, shortenedLink } = props;
 
+  const [showCopied, setShowCopied] = useState(false);
+
+  function copyLink() {
+    navigator.clipboard.writeText(shortenedLink).then(() => {
+      setShowCopied(true);
+      setTimeout(() => {
+        setShowCopied(false);
+      }, 2000);
+    });
+  }
+
   return (
     <div className="shortened-link">
       <p className="original">{originalLink}</p>
       <hr />
       <p className="shortened">{shortenedLink}</p>
-      <button type="button" className="btn">
-        Copy
+      <button
+        type="button"
+        className={`btn copy-btn ${showCopied ? "copied" : ""}`}
+        onClick={copyLink}
+      >
+        {showCopied ? "Copied!" : "Copy"}
       </button>
     </div>
   );

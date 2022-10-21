@@ -108,6 +108,10 @@ nav ul .sign-up {
     border-radius: 40px;
 }
 
+.copy-btn.copied {
+    background-color: var(--dark-background-color);
+}
+
 /* Header Section */
 
 .hamburger-menu {
