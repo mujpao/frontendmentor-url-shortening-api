@@ -1,5 +1,6 @@
 :root {
     --button-background-color: hsl(180, 66%, 49%);
+    --button-hover-background-color: hsl(180, 57%, 77%);
     --very-light-background-color: white;
     --light-background-color: hsl(0, 0%, 94%);
     --dark-background-color: hsl(257, 27%, 26%);
@@ -91,6 +92,7 @@ nav ul .sign-up {
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
 }
 
 .btn {
@@ -99,6 +101,13 @@ nav ul .sign-up {
     font-weight: bold;
     color: var(--light-text-color);
     background-color: var(--button-background-color);
+    cursor: pointer;
+}
+
+nav ul .sign-up:hover,
+.btn:hover {
+    background-color: var(--button-hover-background-color);
+
 }
 
 .btn.get-started {
