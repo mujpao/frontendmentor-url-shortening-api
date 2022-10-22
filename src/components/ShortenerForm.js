@@ -51,7 +51,9 @@ class ShortenerForm extends React.Component {
       labelClasses += "visually-hidden";
     }
 
-    if (touched && !valid) {
+    const showError = touched && !valid;
+
+    if (showError) {
       labelClasses += " invalid-input";
     }
 
@@ -69,10 +71,14 @@ class ShortenerForm extends React.Component {
             onChange={this.handleChange}
             value={urlToShorten}
             className={touched ? "touched" : ""}
+            aria-invalid={showError}
+            aria-errormessage={showError ? "link-error" : undefined}
             required
           />
-          {touched && !valid && (
-            <span className="error">Please add a link</span>
+          {showError && (
+            <span id="link-error" className="error">
+              Please add a link
+            </span>
           )}
         </div>
         <button type="submit" className="btn">
