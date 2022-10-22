@@ -37,7 +37,7 @@ function Navigation() {
   }
 
   useEffect(() => {
-    const mql = window.matchMedia("(min-width: 900px)");
+    const mql = window.matchMedia("(min-width: 1000px)");
     mql.addEventListener("change", onMediaQueryChange);
 
     return () => {
@@ -62,7 +62,7 @@ function Navigation() {
 
   if (isMobile) {
     return (
-      <div>
+      <div className="nav-container">
         <button
           type="button"
           className="hamburger-menu"
@@ -77,7 +77,7 @@ function Navigation() {
     );
   }
 
-  return <div>{navLinks}</div>;
+  return <div className="nav-container">{navLinks}</div>;
 }
 
 export default Intro;
