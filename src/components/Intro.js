@@ -38,6 +38,8 @@ function Navigation() {
 
   useEffect(() => {
     const mql = window.matchMedia("(min-width: 1000px)");
+    setIsMobile(!mql.matches);
+
     mql.addEventListener("change", onMediaQueryChange);
 
     return () => {
