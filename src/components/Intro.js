@@ -35,8 +35,8 @@ class Intro extends React.Component {
             <div />
             <div />
           </button>
+          {showNavigation && <Navigation />}
         </header>
-        {showNavigation && <Navigation />}
         <div className="intro-content">
           <div className="image-container">
             <img
