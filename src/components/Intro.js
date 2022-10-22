@@ -37,18 +37,24 @@ class Intro extends React.Component {
           </button>
         </header>
         {showNavigation && <Navigation />}
-        <div className="image-container">
-          <img className="intro-image" src={introPhoto} alt="person working" />
-        </div>
-        <div className="intro-text">
-          <h1>More than just shorter links</h1>
-          <p>
-            Build your brand’s recognition and get detailed insights on how your
-            links are performing.
-          </p>
-          <button className="btn get-started" type="button">
-            Get Started
-          </button>
+        <div className="intro-content">
+          <div className="image-container">
+            <img
+              className="intro-image"
+              src={introPhoto}
+              alt="person working"
+            />
+          </div>
+          <div className="intro-text">
+            <h1>More than just shorter links</h1>
+            <p>
+              Build your brand’s recognition and get detailed insights on how
+              your links are performing.
+            </p>
+            <button className="btn get-started" type="button">
+              Get Started
+            </button>
+          </div>
         </div>
       </section>
     );

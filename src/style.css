@@ -20,6 +20,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 
 button,
@@ -158,9 +159,6 @@ nav ul .sign-up:hover,
 }
 
 .intro-text {
-    display: grid;
-    justify-items: center;
-    text-align: center;
     padding: 0 20px;
     margin-top: 30px;
 }
@@ -296,6 +294,7 @@ nav ul .sign-up:hover,
     display: grid;
     grid-template-columns: 20px 1fr 20px;
     row-gap: 10px;
+    text-align: left;
 }
 
 .shortened-link>* {
@@ -325,7 +324,6 @@ nav ul .sign-up:hover,
 
 .info {
     padding: 0 20px 80px;
-    text-align: center;
     background-color: var(--light-background-color);
 }
 
@@ -402,7 +400,6 @@ nav ul .sign-up:hover,
     background-repeat: no-repeat;
     background-color: var(--dark-background-color);
     padding: 90px 0;
-    text-align: center;
 }
 
 .call-to-action h2 {
@@ -415,7 +412,6 @@ nav ul .sign-up:hover,
 
 footer {
     background-color: var(--very-dark-background-color);
-    text-align: center;
     align-items: center;
     padding: 50px 20px;
     display: flex;
@@ -453,11 +449,53 @@ footer ul {
 
 .attribution {
     font-size: 11px;
-    text-align: center;
     color: var(--medium-text-color);
 }
 
 .attribution a {
     color: var(--light-text-color);
     text-decoration: none;
+}
+
+@media (min-width: 900px) {
+    body {
+        text-align: left;
+    }
+
+    header {
+        padding: 50px 100px 25px;
+    }
+
+    .intro {
+        padding-bottom: 50px;
+    }
+
+    .intro-content {
+        display: grid;
+        gap: 50px;
+        grid-template-columns: 1fr 1fr;
+        padding: 100px 0 0 100px;
+    }
+
+    .intro-text {
+        grid-column: 1/2;
+    }
+
+    .intro-text h1 {
+        font-size: 4.3rem;
+    }
+
+    .intro-text p {
+        font-size: 1.3rem;
+    }
+
+    .image-container {
+        padding: 0;
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .intro-image {
+        width: auto;
+    }
 }
