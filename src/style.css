@@ -401,7 +401,6 @@ nav ul .sign-up:hover,
     background-color: var(--dark-background-color);
     background-image: url("./images/bg-boost-mobile.svg");
     background-repeat: no-repeat;
-    background-color: var(--dark-background-color);
     padding: 90px 0;
 }
 
@@ -477,9 +476,10 @@ footer ul {
 
     .intro-content {
         display: grid;
-        gap: 50px;
+        gap: 70px;
+        align-items: center;
         grid-template-columns: 1fr 1fr;
-        padding: var(--desktop-side-padding) 0 0 var(--desktop-side-padding);
+        padding: 60px 0 40px var(--desktop-side-padding);
     }
 
     .intro-text {
@@ -513,6 +513,7 @@ footer ul {
     .shortener {
         padding: 50px;
         display: grid;
+        align-items: start;
         grid-template-columns: 4fr 1fr;
         background-image: url("./images/bg-shorten-desktop.svg");
         background-repeat: no-repeat;
@@ -597,5 +598,42 @@ footer ul {
     .info-item:nth-child(3) {
         position: relative;
         top: 100px;
+    }
+
+    /* Call to Action */
+    .call-to-action {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--dark-background-color);
+        background-image: url("./images/bg-boost-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        background-position: top 0px left -70px;
+        padding: 60px 0;
+    }
+
+    .call-to-action h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    /* Footer */
+    footer {
+        display: grid;
+        grid-template-columns: 1fr repeat(4, auto);
+        align-items: start;
+        padding: 80px var(--desktop-side-padding) 20px;
+        gap: 80px;
+    }
+
+
+    .footer-item h3 {
+        font-size: 1.0rem;
+    }
+
+    .attribution {
+        grid-column: 2/-1;
     }
 }
