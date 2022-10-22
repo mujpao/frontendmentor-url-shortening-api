@@ -12,6 +12,8 @@
     --ribbon-height: 95px;
     --ribbon-width: 8px;
     --desktop-side-padding: 125px;
+    --ribbon-desktop-height: 8px;
+    --ribbon-desktop-width: 30px;
 }
 
 * {
@@ -540,5 +542,60 @@ footer ul {
 
     .shortened-link button {
         width: 110px;
+    }
+
+    /* Info */
+    .info {
+        padding: 20px var(--desktop-side-padding) 220px;
+    }
+
+    .info .overview {
+        padding: 0 260px;
+        text-align: center;
+    }
+
+    .info .overview h2 {
+        font-size: 2.5rem;
+    }
+
+    .info-items {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--ribbon-desktop-width);
+    }
+
+    .info-item {
+        align-items: flex-start;
+    }
+
+    .info-item p {
+        font-size: 0.9rem;
+    }
+
+    .info-item:not(:last-child)::after {
+        content: "";
+        display: block;
+        width: var(--ribbon-desktop-width);
+        height: var(--ribbon-desktop-height);
+        background-color: var(--button-background-color);
+        position: absolute;
+        left: auto;
+        bottom: auto;
+        top: 150px;
+        right: calc(-1.0 * var(--ribbon-desktop-width));
+    }
+
+    .info-item:nth-child(2) {
+        position: relative;
+        top: 50px;
+    }
+
+    .info-item:nth-child(2)::after {
+        top: 100px;
+    }
+
+    .info-item:nth-child(3) {
+        position: relative;
+        top: 100px;
     }
 }
