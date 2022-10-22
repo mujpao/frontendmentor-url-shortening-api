@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import darkLogo from "../images/logo.svg";
 import introPhoto from "../images/illustration-working.svg";
 
@@ -30,6 +30,20 @@ function Intro() {
 
 function Navigation() {
   const [showNavigation, setShowNavigation] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  function onMediaQueryChange(e) {
+    setIsMobile(!e.matches);
+  }
+
+  useEffect(() => {
+    const mql = window.matchMedia("(min-width: 900px)");
+    mql.addEventListener("change", onMediaQueryChange);
+
+    return () => {
+      mql.removeEventListener("change", onMediaQueryChange);
+    };
+  });
 
   const navLinks = (
     <nav>
@@ -38,7 +52,7 @@ function Navigation() {
         <li>Pricing</li>
         <li>Resources</li>
       </ul>
-      <hr />
+      {isMobile && <hr />}
       <ul>
         <li>Login</li>
         <li className="sign-up">Sign Up</li>
@@ -46,20 +60,24 @@ function Navigation() {
     </nav>
   );
 
-  return (
-    <div>
-      <button
-        type="button"
-        className="hamburger-menu"
-        onClick={() => setShowNavigation(!showNavigation)}
-      >
-        <div />
-        <div />
-        <div />
-      </button>
-      {showNavigation && navLinks}
-    </div>
-  );
+  if (isMobile) {
+    return (
+      <div>
+        <button
+          type="button"
+          className="hamburger-menu"
+          onClick={() => setShowNavigation(!showNavigation)}
+        >
+          <div />
+          <div />
+          <div />
+        </button>
+        {showNavigation && navLinks}
+      </div>
+    );
+  }
+
+  return <div>{navLinks}</div>;
 }
 
 export default Intro;
