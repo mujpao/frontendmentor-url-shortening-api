@@ -517,4 +517,28 @@ footer ul {
         background-position: top 0px left 0px;
         background-size: cover;
     }
+
+    .shortened-links {
+        padding: 0 var(--desktop-side-padding);
+    }
+
+    .shortened-link {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr auto auto;
+        gap: 20px;
+        align-items: center;
+        padding: 15px 25px;
+    }
+
+    .shortened-link>* {
+        grid-column: auto;
+    }
+
+    .shortened-link hr {
+        display: none;
+    }
+
+    .shortened-link button {
+        width: 110px;
+    }
 }
