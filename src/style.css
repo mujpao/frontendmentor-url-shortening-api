@@ -445,6 +445,15 @@ footer ul {
     color: var(--medium-text-color);
 }
 
+.footer-item ul li {
+    cursor: pointer;
+}
+
+
+.footer-item ul li:hover {
+    color: var(--button-background-color);
+}
+
 .social-icons {
     margin: 20px 0;
     display: flex;
@@ -459,6 +468,10 @@ footer ul {
 .attribution a {
     color: var(--light-text-color);
     text-decoration: none;
+}
+
+.attribution a:hover {
+    color: var(--button-background-color);
 }
 
 @media (min-width: 1000px) {
@@ -500,14 +513,21 @@ footer ul {
         font-size: 0.95rem;
     }
 
-    nav hr {
-        border: none;
-        border-top: 1px solid var(--medium-text-color);
+    nav ul li {
+        cursor: pointer;
+    }
+
+    nav ul li:hover {
+        color: var(--dark-text-color);
     }
 
     nav ul .sign-up {
         margin-left: 10px;
         padding: 8px 30px;
+    }
+
+    nav ul .sign-up:hover {
+        color: var(--light-text-color);
     }
 
     .intro-content {
