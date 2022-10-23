@@ -17,20 +17,22 @@ class Shortener extends React.Component {
   }
 
   handleURLSubmitted(urlToShorten) {
-    shortenURL(urlToShorten).then((shortenedURL) => {
-      this.setState((prevState) => {
-        const newURLs = prevState.urls.concat({
-          originalLink: urlToShorten,
-          shortenedLink: shortenedURL,
+    shortenURL(urlToShorten)
+      .then((shortenedURL) => {
+        this.setState((prevState) => {
+          const newURLs = prevState.urls.concat({
+            originalLink: urlToShorten,
+            shortenedLink: shortenedURL,
+          });
+
+          storeURLS(newURLs);
+
+          return {
+            urls: newURLs,
+          };
         });
-
-        storeURLS(newURLs);
-
-        return {
-          urls: newURLs,
-        };
-      });
-    });
+      })
+      .catch((err) => console.log(err));
   }
 
   render() {
