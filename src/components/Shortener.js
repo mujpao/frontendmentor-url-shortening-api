@@ -7,16 +7,7 @@ class Shortener extends React.Component {
     super(props);
 
     this.state = {
-      urls: [
-        {
-          originalLink: "https://www.foo.com",
-          shortenedLink: "https://www.google.com",
-        },
-        {
-          originalLink: "https://www.foo2.com",
-          shortenedLink: "https://www.google.com",
-        },
-      ],
+      urls: [],
     };
 
     this.handleURLSubmitted = this.handleURLSubmitted.bind(this);
@@ -81,7 +72,9 @@ function ShortenedLink(props) {
     <div className="shortened-link">
       <p className="original">{originalLink}</p>
       <hr />
-      <p className="shortened">{shortenedLink}</p>
+      <a href={shortenedLink} className="shortened">
+        {shortenedLink}
+      </a>
       <button
         type="button"
         className={`btn copy-btn ${showCopied ? "copied" : ""}`}

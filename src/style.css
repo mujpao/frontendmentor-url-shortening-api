@@ -329,6 +329,13 @@ nav ul .sign-up:hover,
 
 .shortened-link .shortened {
     color: var(--button-background-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.shortened-link .shortened:hover {
+    color: var(--button-hover-background-color);
+    text-decoration: underline;
 }
 
 .shortened-link>hr {
