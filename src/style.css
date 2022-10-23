@@ -339,7 +339,8 @@ nav ul .sign-up:hover,
 }
 
 .shortened-link>hr {
-    border-top: 1px solid var(--light-background-color);
+    border: none;
+    border-top: 2px solid var(--light-background-color);
     grid-column: 1/-1;
 }
 
