@@ -464,6 +464,14 @@ footer ul {
     gap: 20px;
 }
 
+.social-icon img {
+    cursor: pointer;
+}
+
+.social-icon img:hover {
+    filter: brightness(0) saturate(100%) invert(65%) sepia(40%) saturate(764%) hue-rotate(131deg) brightness(95%) contrast(87%);
+}
+
 .attribution {
     font-size: 11px;
     color: var(--medium-text-color);
