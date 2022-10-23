@@ -80,6 +80,19 @@ nav ul {
     font-weight: bold;
 }
 
+
+nav ul li {
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    color: var(--medium-text-color);
+}
+
+nav ul .sign-up:hover {
+    color: var(--light-text-color);
+}
+
 nav hr {
     border: none;
     border-top: 1px solid var(--medium-text-color);
