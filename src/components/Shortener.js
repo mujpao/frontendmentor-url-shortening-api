@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import shortenURL from "../shortenURL";
 import ShortenerForm from "./ShortenerForm";
+import { loadURLs, storeURLS } from "../loadStoreURLs";
 
 class Shortener extends React.Component {
   constructor(props) {
     super(props);
 
+    const urls = loadURLs();
+
     this.state = {
-      urls: [],
+      urls,
     };
 
     this.handleURLSubmitted = this.handleURLSubmitted.bind(this);
@@ -15,12 +18,18 @@ class Shortener extends React.Component {
 
   handleURLSubmitted(urlToShorten) {
     shortenURL(urlToShorten).then((shortenedURL) => {
-      this.setState((prevState) => ({
-        urls: prevState.urls.concat({
+      this.setState((prevState) => {
+        const newURLs = prevState.urls.concat({
           originalLink: urlToShorten,
           shortenedLink: shortenedURL,
-        }),
-      }));
+        });
+
+        storeURLS(newURLs);
+
+        return {
+          urls: newURLs,
+        };
+      });
     });
   }
 
