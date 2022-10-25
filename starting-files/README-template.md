@@ -1,6 +1,6 @@
 # Frontend Mentor - Shortly URL shortening API Challenge solution
 
-This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -14,9 +14,6 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -37,7 +34,7 @@ Users should be able to:
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
 
 Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
@@ -52,64 +49,65 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Built with
 
-- Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This project gave me an opportunity to practice React, which I have been learning recently. One of the first steps was to divide the app into components and figure out whether to use class or functional components. I have mostly been using class components if there is state and functional components if there is no state. However, for this project, I experimented with using hooks in the `Navigation` and `ShortenedLink` components. This seemed to result in cleaner-looking code than if I had used a class component.
 
-To see how you can add code snippets, see below:
+Here is an example of using the `useState()` hook to add a variable that stores whether or not a link has just been copied:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+function ShortenedLink(props) {
+  const { originalLink, shortenedLink } = props;
+
+  const [showCopied, setShowCopied] = useState(false);
+
+  function copyLink() {
+    navigator.clipboard.writeText(shortenedLink).then(() => {
+      setShowCopied(true);
+      setTimeout(() => {
+        setShowCopied(false);
+      }, 2000);
+    });
+  }
+
+  return (
+    <div className="shortened-link">
+      <p className="original">{originalLink}</p>
+      <hr />
+      <a href={shortenedLink} className="shortened">
+        {shortenedLink}
+      </a>
+      <button
+        type="button"
+        className={`btn copy-btn ${showCopied ? "copied" : ""}`}
+        onClick={copyLink}
+      >
+        {showCopied ? "Copied!" : "Copy"}
+      </button>
+    </div>
+  );
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+In the `ShortenerForm` component, I used a `ref` to keep track of the input DOM element so that I could use the [Constraint Validation API](https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation) to check the validity of the input whenever it is changed.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+I used [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to persist the shortened links after the browser is refreshed.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I want to continue using React and keep learning how and when to use hooks. I will consider using [classnames](https://www.npmjs.com/package/classnames) in the future to make it easier to work with classes.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Stack Overflow question about changing the color of an SVG](https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element) - This helped me figure out how to change the color of the icons on hover.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [mujpao](https://github.com/mujpao)
+- Frontend Mentor - [@mujpao](https://www.frontendmentor.io/profile/mujpao)
