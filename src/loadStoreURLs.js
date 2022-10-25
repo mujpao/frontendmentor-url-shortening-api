@@ -25,8 +25,11 @@ function deserializeURLs(urls) {
 }
 
 function loadURLs() {
-  // TODO check if localstorage has item
-  const urls = deserializeURLs(localStorage.getItem("shortenedURLs"));
+  const urlsString = localStorage.getItem("shortenedURLs");
+  if (!urlsString) {
+    return [];
+  }
+  const urls = deserializeURLs(urlsString);
 
   if (urls === null) {
     return [];
