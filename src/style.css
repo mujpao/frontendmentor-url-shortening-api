@@ -301,9 +301,26 @@ nav ul .sign-up:hover,
     font-size: 1.1rem;
 }
 
+.updates {
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.shorten-url-error {
+    background-color: var(--error-color);
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    color: var(--light-text-color);
+    border-radius: 5px;
+    text-align: left;
+}
+
+.shorten-url-error p {
+    color: var(--light-text-color);
+}
+
 .shortened-links {
     margin: 20px 0 0;
-    padding: 0 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -616,8 +633,12 @@ footer ul {
         top: 50px;
     }
 
-    .shortened-links {
+    .updates {
         padding: 0 var(--desktop-side-padding);
+    }
+
+    .shorten-url-error {
+        padding: 10px 25px;
     }
 
     .shortened-link {

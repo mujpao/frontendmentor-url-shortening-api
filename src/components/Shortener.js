@@ -11,6 +11,7 @@ class Shortener extends React.Component {
 
     this.state = {
       urls,
+      showError: false,
     };
 
     this.handleURLSubmitted = this.handleURLSubmitted.bind(this);
@@ -29,14 +30,21 @@ class Shortener extends React.Component {
 
           return {
             urls: newURLs,
+            showError: false,
           };
         });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+
+        this.setState({
+          showError: true,
+        });
+      });
   }
 
   render() {
-    const { urls } = this.state;
+    const { urls, showError } = this.state;
 
     return (
       <section className="shortener-container">
@@ -45,10 +53,23 @@ class Shortener extends React.Component {
           <div className="top" />
           <div className="bottom" />
         </div>
-        <ShortenedLinks urls={urls} />
+        <div className="updates" aria-live="polite">
+          {showError && <ShortenURLError />}
+          <ShortenedLinks urls={urls} />
+        </div>
       </section>
     );
   }
+}
+
+function ShortenURLError() {
+  return (
+    <div className="shorten-url-error">
+      <p>
+        <strong>Error: </strong> unable to shorten url.
+      </p>
+    </div>
+  );
 }
 
 function ShortenedLinks(props) {
