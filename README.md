@@ -42,8 +42,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub repo](https://github.com/mujpao/frontendmentor-url-shortening-api)
+- Live Site URL: [GitHub Pages](https://mujpao.github.io/frontendmentor-url-shortening-api/)
 
 ## My process
 
@@ -106,6 +106,7 @@ I want to continue using React and keep learning how and when to use hooks. I wi
 ### Useful resources
 
 - [Stack Overflow question about changing the color of an SVG](https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element) - This helped me figure out how to change the color of the icons on hover.
+- [Instructions for deploying a React app to GitHub Pages](https://create-react-app.dev/docs/deployment/#github-pages)
 
 ## Author
 
