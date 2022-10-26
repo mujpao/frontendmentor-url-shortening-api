@@ -107,6 +107,7 @@ I want to continue using React and keep learning how and when to use hooks. I wi
 
 - [Stack Overflow question about changing the color of an SVG](https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element) - This helped me figure out how to change the color of the icons on hover.
 - [Instructions for deploying a React app to GitHub Pages](https://create-react-app.dev/docs/deployment/#github-pages)
+- [Article about ARIA Live Regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) - I used `aria-live="polite"` to read out the changes when a new short link is generated or an error occurs.
 
 ## Author
 
